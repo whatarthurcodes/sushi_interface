@@ -1,0 +1,304 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Sushi</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+ <meta name="viewport" content="width=device-width, user-scalable=no" />
+
+  <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.112/styles/kendo.common.min.css" />
+  <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.112/styles/kendo.office365.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script><!-- 
+  <script src="http://kendo.cdn.telerik.com/2016.1.112/js/jquery.min.js"></script>
+  <script src="http://kendo.cdn.telerik.com/2016.1.112/js/kendo.all.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+<script src="http://rawgit.com/pisi/Longclick/master/jquery.longclick-min.js"></script>
+
+  <style type="text/css">
+  *:not(input):not(textarea) {
+  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
+  -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
+}   
+  .food {
+    width:110px;
+    height: 90px;;
+  }
+  .menu {
+    width:80px;
+    height: 60px;
+  }
+  .panel-heading a:after {
+    font-family:'Glyphicons Halflings';
+    content:"\e114";
+    float: right;
+    color: grey;
+}
+.panel-heading a.collapsed:after {
+    content:"\e080";
+}
+
+.panel-group {
+
+}
+img.food{
+  position:relative;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+.sushilist li{
+   width:110px;
+    height: 90px;;
+position: relative;
+  }
+.sushilist .glyphicon-triangle-bottom{
+
+  position: absolute;
+  top:55px;
+  left:12px;
+  z-index: 3;
+}
+
+.sushilist .glyphicon-triangle-top{
+
+  position: absolute;
+  top:40px;
+  left:12px;
+
+  z-index: 3;
+}
+.sushilist .update{
+
+  position: absolute;
+  top:50px;
+  left:92px;
+  font-size:34px;
+  z-index: 3;
+  color: rgba(33, 33, 33, 0.5);
+}
+</style>
+</head>
+<body>
+  
+ <main class="container-fluid">
+    <div class="row">
+     <section class="problemTypeArea panel col-sm-9">
+        <div>
+         <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="panel-body"><ul class="list-inline">
+              <li><h2>SuSeee</h2></li>
+              <li><img src="#" class="menu" id="1"></li>
+              <li><img src="#" class="menu" id="2"></li>
+              <li><img src="#" class="menu" id="3"></li>
+              <li><img src="#" class="menu" id="4"></li>
+          </ul></div>
+  </div>
+</nav>
+
+         
+<div class="panel-group" id="accordion" style="margin-top: 120px">
+    <div class="panel panel-default" id="panel1">
+        <div class="panel-heading">
+             <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseOne" 
+           href="#collapseOne">
+          Apps
+        </a>
+      </h4>
+
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <ul class="list-inline sushilist">
+              <li><img src="sushi.jpg" class="food">
+              <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+              <span class="update"></span>
+              </li>
+              <li><img src="sushi.jpg" class="food"></li>
+              <li><img src="sushi.jpg" class="food"></li>
+              <li><img src="sushi.jpg" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+          </ul></div>
+        </div>
+    </div>
+    <div class="panel panel-default" id="panel2">
+        <div class="panel-heading">
+             <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseTwo" 
+           href="#collapseTwo" >
+          Sushi and Rolls
+        </a>
+      </h4>
+
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse in">
+            <div class="panel-body"><ul class="list-inline">
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+          </ul></div>
+        </div>
+    </div>
+    <div class="panel panel-default" id="panel3">
+        <div class="panel-heading">
+             <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseThree"
+           href="#collapseThree" >
+          Chinese
+        </a>
+      </h4>
+
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse in">
+            <div class="panel-body"><ul class="list-inline">
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+          </ul></div>
+        </div>
+    </div>
+</div>
+          
+        </div>
+      </section>
+      
+      <section class="problemTypeArea panel col-sm-3">
+        <h2>Orders</h2> 
+        <h2>Orders</h2> 
+
+        <h2>Orders</h2> 
+
+        <h2 class="update">Update me</h2> 
+
+
+      </section>
+    </div>
+
+  </main>
+  <script type="text/x-kendo-tmpl" id="routeBoxTemplate">
+  <li class="routeBox well" ><a>
+  <h3 class="routeNumber">${number}</h3>
+  <p class="direction">${direction}</p>
+  <p class="timeOfDay">${timeOfDay}</p></a>
+  </li>
+  </script>
+  <script>
+  $(".menu").click(function() {
+  switch (parseInt(this.id))
+  {
+    case 1:
+     $('html, body').animate({
+       scrollTop: $("#collapseOne").offset().top - 120
+    }, 200);
+      break;
+    case 2:
+$('html, body').animate({
+       scrollTop: $("#collapseTwo").offset().top -120
+    }, 200);
+break;
+    case 3:
+    $('html, body').animate({
+       scrollTop: $("#collapseThree").offset().top -120
+    }, 200);
+    break;
+  }
+});
+  </script>
+
+  <script type="text/javascript">
+    var timeoutId = 0;
+    var timeMouseDown = 0;
+// $('.glyphicon-triangle-top').mousedown(function() {
+//     timeoutId = setTimeout(myFunction, 1000);
+// }).bind('mouseup mouseleave', function() {
+//     clearTimeout(timeoutId);
+// });
+
+var mouseIsDown = false;
+var whatever = 0;
+$('.glyphicon-triangle-top').mouseup(function(){
+    mouseIsDown = false;
+    clearInterval(timeoutId);
+    timeMouseDown = 0;
+});
+
+$('.glyphicon-triangle-top').mousedown(function(){
+    mouseIsDown = true;
+    timeMouseDown = Date.now();
+    myFunction();
+});
+
+function myFunction() {
+     if(mouseIsDown === true){
+         timeoutId = setInterval('myFunction()', 100);
+          whatever = Math.round(parseInt((Date.now() - timeMouseDown))/500) ;
+         $('.update').text(whatever);   
+     }
+}
+
+  </script>
+</body>
+</html>
