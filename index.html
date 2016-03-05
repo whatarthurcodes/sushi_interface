@@ -118,12 +118,14 @@ position: relative;
               <ul class="list-inline sushilist">
               <li><img src="sushi.jpg" class="food" data-toggle="modal" data-target="#myModal">
               <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-triangle-top" aria-hidden="true" id="item_1"></span>
               <span class="update"></span>
               </li>
-              <li><img src="sushi.jpg" class="food"></li>
-              <li><img src="sushi.jpg" class="food"></li>
-              <li><img src="sushi.jpg" class="food"></li>
+              <li><img src="sushi.jpg" class="food" data-toggle="modal" data-target="#myModal">
+              <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-triangle-top" aria-hidden="true" id="item_2"></span>
+              <span class="update"></span>
+              </li>
               <li><img src="#" class="food"></li>
               <li><img src="#" class="food"></li>
               <li><img src="#" class="food"></li>
@@ -264,7 +266,7 @@ position: relative;
         <h2>Orders</h2> 
         <h2>Orders</h2> 
 
-        <h2 class="update">Update me</h2> 
+        <h2 class="update"></h2> 
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#theModal">
   Call Server
 </button>
@@ -330,10 +332,9 @@ function myFunction() {
      if(mouseIsDown === true){
          timeoutId = setInterval('myFunction()', 100);
           whatever = Math.round(parseInt((Date.now() - timeMouseDown))/500) ;
-         $('.update').text(whatever);   
+         $('.update').text("Item 1 -" + whatever);   
      }
 }
-
   </script>
   <script type="text/javascript">
       $('.myModal').on('shown.bs.modal', function () {
