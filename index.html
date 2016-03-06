@@ -116,14 +116,14 @@ position: relative;
         <div id="collapseOne" class="panel-collapse collapse in">
             <div class="panel-body">
               <ul class="list-inline sushilist">
-              <li><img src="sushi.jpg" class="food" data-toggle="modal" data-target="#myModal">
+              <li  id="item_1"><img src="sushi.jpg" class="food" data-toggle="modal" data-target="#myModal">
               <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-triangle-top" aria-hidden="true" id="item_1"></span>
+              <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
               <span class="update"></span>
               </li>
-              <li><img src="sushi.jpg" class="food" data-toggle="modal" data-target="#myModal">
+              <li  id="item_2"><img src="sushi.jpg" class="food" data-toggle="modal" data-target="#myModal">
               <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-triangle-top" aria-hidden="true" id="item_2"></span>
+              <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
               <span class="update"></span>
               </li>
               <li><img src="#" class="food"></li>
@@ -308,32 +308,46 @@ break;
   <script type="text/javascript">
     var timeoutId = 0;
     var timeMouseDown = 0;
-// $('.glyphicon-triangle-top').mousedown(function() {
-//     timeoutId = setTimeout(myFunction, 1000);
-// }).bind('mouseup mouseleave', function() {
-//     clearTimeout(timeoutId);
+$('.glyphicon-triangle-top').mousedown(function(e) {
+ source = $(this);
+
+ //whatever = source.parent().attr('id')).children(".update").text();
+    timeoutId = setTimeout(function() {
+    myFunction(source)}, 300);
+}).bind('mouseup mouseleave', function() {
+  if (whatever !== 0){
+    $('.problemTypeArea.col-sm-3 .update').append($(this).parent().attr('id') + ": " + whatever  + "<br />");
+  }
+    clearTimeout(timeoutId);
+    whatever = 0;
+});
+
+// var mouseIsDown = false;
+ var whatever = 0;
+// $('.glyphicon-triangle-top').mouseup(function(){
+//     mouseIsDown = false;
+//     clearInterval(timeoutId);
+//     timeMouseDown = 0;
 // });
 
-var mouseIsDown = false;
-var whatever = 0;
-$('.glyphicon-triangle-top').mouseup(function(){
-    mouseIsDown = false;
-    clearInterval(timeoutId);
-    timeMouseDown = 0;
-});
+// $('.glyphicon-triangle-top').mousedown(function(){
+//     mouseIsDown = true;
+//     timeMouseDown = Date.now();
+//     myFunction();
+// });
 
-$('.glyphicon-triangle-top').mousedown(function(){
-    mouseIsDown = true;
-    timeMouseDown = Date.now();
-    myFunction();
-});
+function myFunction(aa) {
+     //if(mouseIsDown === true){
+      //alert(aa.parent().attr('id'));
+         timeoutId = setTimeout(function() {
+    myFunction(aa)}, 300);
+         whatever += 1;
+          //whatever = Math.round(parseInt((Date.now() - timeMouseDown))/500) ;
+         $('#'+aa.parent().attr('id')).children(".update").text(whatever);   
+         //$('.problemTypeArea col-sm-3 .update').append(aa.parent().attr('id') + ": " + whatever + "<br />");
+         $('#'+aa.parent().attr('id'));  
 
-function myFunction() {
-     if(mouseIsDown === true){
-         timeoutId = setInterval('myFunction()', 100);
-          whatever = Math.round(parseInt((Date.now() - timeMouseDown))/500) ;
-         $('.update').text("Item 1 -" + whatever);   
-     }
+     //}
 }
   </script>
   <script type="text/javascript">
