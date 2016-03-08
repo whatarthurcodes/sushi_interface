@@ -70,6 +70,17 @@ position: relative;
   z-index: 3;
   font-size: 30px;
 }
+
+.input_box{
+  position: absolute;
+  top:35px;
+  left:12px;
+  z-index: 3;
+  background-color: #ffffff;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+  width: 90px;
+}
 .sushilist .update{
 
   position: absolute;
@@ -78,6 +89,11 @@ position: relative;
   font-size:34px;
   z-index: 3;
   color: rgba(33, 33, 33, 0.5);
+  width: 50px
+}
+
+.receipt{
+  font-size: 20px;
 }
 </style>
 </head>
@@ -114,14 +130,17 @@ position: relative;
             <div class="panel-body">
               <ul class="list-inline sushilist">
               <li  id="item_1"><img src="sushi.jpg" class="food" data-toggle="modal" data-target="#myModal">
-              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              <!-- <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> -->
               <span class="update"></span>
+              <input type='text' id="input_field"name='fname' class='chatinput input_box' onkeyUp="live()" />
+
               </li>
               <li  id="item_2"><img src="sushi.jpg" class="food" data-toggle="modal" data-target="#myModal">
-              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              <!-- <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> -->
               <span class="update"></span>
+              <input type='text' id="input_field2"name='fname' class='chatinput input_box' onkeyUp="live2()" />
               </li>
               <li><img src="#" class="food"></li>
               <li><img src="#" class="food"></li>
@@ -307,10 +326,17 @@ position: relative;
       </section>
       
       <section class="problemTypeArea panel col-sm-3">
+
         <br>
         <br>
         <br>
         <br>
+        <br>
+        <br>
+        <br>
+        <div class='printchatbox receipt' id='printchatbox'></div>
+        <div class='printchatbox receipt' id='printchatbox2'></div>
+
 
         <h2 class="update"></h2> 
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#theModal">
@@ -416,6 +442,16 @@ function myFunction(aa) {
   })
   </script>
 
+  <script type="text/javascript">
+    function live() {
+      document.getElementById('printchatbox').innerHTML =  "Miso Soup: " + document.getElementById('input_field').value
+    }
+  </script>
+  <script type="text/javascript">
+    function live2() {
+      document.getElementById('printchatbox2').innerHTML =  "Salad: " + document.getElementById('input_field2').value
+    }
+  </script>
   
 </body>
 </html>
