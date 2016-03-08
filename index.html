@@ -12,9 +12,7 @@
   <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.112/styles/kendo.common.min.css" />
   <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.112/styles/kendo.office365.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script><!-- 
-  <script src="http://kendo.cdn.telerik.com/2016.1.112/js/jquery.min.js"></script>
-  <script src="http://kendo.cdn.telerik.com/2016.1.112/js/kendo.all.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
 <script src="http://rawgit.com/pisi/Longclick/master/jquery.longclick-min.js"></script>
 
@@ -55,7 +53,7 @@ img.food{
     height: 90px;;
 position: relative;
   }
-.sushilist .glyphicon-triangle-bottom{
+.sushilist .glyphicon-minus{
 
   position: absolute;
   top:65px;
@@ -64,7 +62,7 @@ position: relative;
   font-size: 30px;
 }
 
-.sushilist .glyphicon-triangle-top{
+.sushilist .glyphicon-plus{
 
   position: absolute;
   top:15px;
@@ -91,13 +89,12 @@ position: relative;
         <div>
          <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container" style="margin-left: 0px">
-    <div class="panel-body"><ul class="list-inline">
-              <li><h2>SuSeee</h2></li>
-              <li class="menu" id="1"><h4>Apps</h4></li>
-              <li class="menu" id="2"><h4>Sushi</h4></li>
-              <li class="menu" id="3"><h4>Chinese</h4></li>
-              <li class="menu" id="4"><h4>Other</h4></li>
-          </ul></div>
+    <div class="panel-body"><ul class="nav navbar-nav">
+        <li class="active menu" id ="1"><a href="#">Apps</a></li>
+        <li class="menu" id ="2"><a href="#">Sushi</a></li>
+        <li class="menu" id ="3"><a href="#">Chinese</a></li>
+        <li class="menu" id ="4"><a href="#">Other</a></li>
+          </div>
   </div>
 </nav>
 
@@ -117,13 +114,13 @@ position: relative;
             <div class="panel-body">
               <ul class="list-inline sushilist">
               <li  id="item_1"><img src="sushi.jpg" class="food" data-toggle="modal" data-target="#myModal">
-              <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
               <span class="update"></span>
               </li>
               <li  id="item_2"><img src="sushi.jpg" class="food" data-toggle="modal" data-target="#myModal">
-              <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
               <span class="update"></span>
               </li>
               <li><img src="#" class="food"></li>
@@ -253,6 +250,54 @@ position: relative;
               <li><img src="#" class="food"></li>
               <li><img src="#" class="food"></li>
               <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+          </ul></div>
+        </div>
+    </div>
+     <div class="panel panel-default" id="panel4">
+        <div class="panel-heading">
+             <h4 class="panel-title">
+        <a data-toggle="collapse" data-target="#collapseFour"
+           href="#collapseFour" >
+          Other
+        </a>
+      </h4>
+
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse in">
+            <div class="panel-body"><ul class="list-inline">
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
+              <li><img src="#" class="food"></li>
           </ul></div>
         </div>
     </div>
@@ -262,9 +307,10 @@ position: relative;
       </section>
       
       <section class="problemTypeArea panel col-sm-3">
-        <h2>Orders</h2> 
-        <h2>Orders</h2> 
-        <h2>Orders</h2> 
+        <br>
+        <br>
+        <br>
+        <br>
 
         <h2 class="update"></h2> 
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#theModal">
@@ -281,6 +327,12 @@ position: relative;
   <p class="direction">${direction}</p>
   <p class="timeOfDay">${timeOfDay}</p></a>
   </li>
+  </script>
+  <script type="text/javascript">
+    $(".menu").click(function() {
+    $(".menu").parent().find('li').removeClass("active");
+    $(this).addClass('active');
+});
   </script>
   <script>
   $(".menu").click(function() {
@@ -301,6 +353,11 @@ break;
        scrollTop: $("#collapseThree").offset().top -120
     }, 200);
     break;
+    case 4:
+    $('html, body').animate({
+       scrollTop: $("#collapseFour").offset().top -120
+    }, 200);
+    break;
   }
 });
   </script>
@@ -308,7 +365,7 @@ break;
   <script type="text/javascript">
     var timeoutId = 0;
     var timeMouseDown = 0;
-$('.glyphicon-triangle-top').mousedown(function(e) {
+$('.glyphicon-plus').mousedown(function(e) {
  source = $(this);
 
  //whatever = source.parent().attr('id')).children(".update").text();
@@ -324,13 +381,13 @@ $('.glyphicon-triangle-top').mousedown(function(e) {
 
 // var mouseIsDown = false;
  var whatever = 0;
-// $('.glyphicon-triangle-top').mouseup(function(){
+// $('.glyphicon-plus').mouseup(function(){
 //     mouseIsDown = false;
 //     clearInterval(timeoutId);
 //     timeMouseDown = 0;
 // });
 
-// $('.glyphicon-triangle-top').mousedown(function(){
+// $('.glyphicon-plus').mousedown(function(){
 //     mouseIsDown = true;
 //     timeMouseDown = Date.now();
 //     myFunction();
@@ -358,5 +415,7 @@ function myFunction(aa) {
     $('#myInput').focus()
   })
   </script>
+
+  
 </body>
 </html>
