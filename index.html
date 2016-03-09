@@ -21,13 +21,10 @@
   -webkit-user-select: none; /* disable selection/Copy of UIWebView */
   -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
 }   
-  .food {
-    width:150px;
-    height: 100px;;
-  }
-  .menu {
-    width:80px;
-    height: 60px;
+ 
+  .menu {/*
+    width:120px;
+    height: 80px;*/
   }
   .panel-heading a:after {
     font-family:'Glyphicons Halflings';
@@ -36,28 +33,37 @@
     color: grey;
 }
 .panel-heading a.collapsed:after {
-    content:"\e080";
+    content:"\e080
+";
 }
-
 .panel-group {
 
 }
+ .food {
+     
+}
 img.food{
-  position:relative;
+  position:absolute;
   top:0;
-  left:0;
+  right:0;
+  width:120px;
+
+    height: 80px;;
   z-index: 1;
 }
 .sushilist li{
    width:150px;
-    height: 100px;;
+    height: 100px;
+    margin-right: 20px;
+    border: 1px solid gray;
+    border-radius: 3px;
 position: relative;
   }
 .sushilist .glyphicon-minus{
 
   position: absolute;
+  left:0px;
   top:80px;
-  left:-20px;
   z-index: 3;
   font-size: 20px;
 }
@@ -66,7 +72,15 @@ position: relative;
 
   position: absolute;
   top:0px;
-  left:-20px;
+  left:2px;
+  z-index: 3;
+  font-size: 20px;
+}
+.sushilist .itemName{
+
+  position: absolute;
+  bottom:0px;
+  right:0px;
   z-index: 3;
   font-size: 20px;
 }
@@ -74,7 +88,7 @@ position: relative;
 .wheel{
   position: absolute;
   top:23px;
-  left:-16px;
+  left:6px;
   z-index: 3;
   font-size: 20px;
 }
@@ -106,7 +120,7 @@ position: relative;
 }
 
 .sushilist li{
-  margin-left: 30px;
+ 
 }
 </style>
 </head>
@@ -143,18 +157,21 @@ position: relative;
             <div class="panel-body">
               <ul class="list-inline sushilist">
               <li  id="item_1"><img src="sushi.jpg" class="food" data-toggle="modal" data-target="#myModal">
-              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
               <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
               <img src="scroll.jpg" class="wheel">
+              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+              <span class="itemName">Item 1</span>
               <!-- <span class="update"></span> -->
               <!-- live input -->
               <!-- <input type='text' id="input_field"name='fname' class='chatinput input_box' onkeyUp="live()" /> -->
 
               </li>
               <li  id="item_2"><img src="sushi.jpg" class="food" data-toggle="modal" data-target="#myModal">
-              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
               <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
               <img src="scroll.jpg" class="wheel">
+
+              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+              <span class="itemName">Item 2</span>
               <!-- <span class="update"></span> -->
               <!-- <input type='text' id="input_field2"name='fname' class='chatinput input_box' onkeyUp="live2()" /> -->
               </li>
@@ -407,6 +424,8 @@ break;
   <script type="text/javascript">
     var timeoutId = 0;
     var timeMouseDown = 0;
+
+ var whatever = 0;
 $('.glyphicon-plus').mousedown(function(e) {
  source = $(this);
 
@@ -415,14 +434,15 @@ $('.glyphicon-plus').mousedown(function(e) {
     myFunction(source)}, 300);
 }).bind('mouseup mouseleave', function() {
   if (whatever !== 0){
-    $('.problemTypeArea.col-sm-3 .update').append($(this).parent().attr('id') + ": " + whatever  + "<br />");
+    addItem($(this),whatever);
   }
     clearTimeout(timeoutId);
     whatever = 0;
 });
-
+$('.glyphicon-plus').click(function(e){
+  addItem($(this),1);
+})
 // var mouseIsDown = false;
- var whatever = 0;
 // $('.glyphicon-plus').mouseup(function(){
 //     mouseIsDown = false;
 //     clearInterval(timeoutId);
@@ -442,28 +462,33 @@ function myFunction(aa) {
     myFunction(aa)}, 300);
          whatever += 1;
           //whatever = Math.round(parseInt((Date.now() - timeMouseDown))/500) ;
-         $('#'+aa.parent().attr('id')).children(".update").text(whatever);   
+         //$('#'+aa.parent().attr('id')).children(".update").text(whatever);   
          //$('.problemTypeArea col-sm-3 .update').append(aa.parent().attr('id') + ": " + whatever + "<br />");
-         $('#'+aa.parent().attr('id'));  
+         //$('#'+aa.parent().attr('id'));  
 
      //}
 }
+function addItem(aa, value)
+{
+  //alert(whatever);
+  if($('.problemTypeArea.col-sm-3 .update').find($('[data-generated="'+aa.parent().attr('id')+'"]')).length == 0)
+    {
+      $('.problemTypeArea.col-sm-3 .update').append("<span data-generated="+aa.parent().attr('id')+">" + aa.parent().attr('id') + ": <span class='number'>" + value  + "</span></span><br />");
+}
+else
+{
+  $('[data-generated="'+aa.parent().attr('id')+'"]').children(".number").text(parseInt($('[data-generated="'+aa.parent().attr('id')+'"]').children(".number").text()) + value);
+}}
   </script>
   <script type="text/javascript">
-      $('.myModal').on('shown.bs.modal', function () {
+      $('.myModal, .theModal').on('shown.bs.modal', function () {
     $('#myInput').focus()
   })
-       $('.theModal').on('shown.bs.modal', function () {
-    $('#myInput').focus()
-  })
-  </script>
 
-  <script type="text/javascript">
     function live() {
       document.getElementById('printchatbox').innerHTML =  "Miso Soup: " + document.getElementById('input_field').value
     }
-  </script>
-  <script type="text/javascript">
+
     function live2() {
       document.getElementById('printchatbox2').innerHTML =  "Salad: " + document.getElementById('input_field2').value
     }
